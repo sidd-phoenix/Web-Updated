@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Technologies Website</title>
+  <link rel="stylesheet" href="./index_style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+  <header>
+    
+   <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button id="search-button">Search</button>
+    </div>
+    <div class="user-buttons">
+      <button class="login-button" onclick="openModal()">Login</button>
+      <button class="signup-button" onclick="openSignupModal()">Signup</button>
+    </div>
+   </div>
+    
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li>
+          <a href="ai.html">AI</a>
+          <ul class="dropdown">
+            <li><a href="#ai-intro">Introduction</a></li>
+            <li><a href="#ai-applications">Applications</a></li>
+            <li><a href="#ai-ethics">Ethical Considerations</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="ml.html">ML</a>
+          <ul class="dropdown">
+            <li><a href="#ml-algorithms">Algorithms</a></li>
+            <li><a href="#ml-models">Models</a></li>
+            <li><a href="#ml-applications">Applications</a></li>
+          </ul>
+        </li>
+        <li><a href="iot.html">IoT</a></li>
+        <li>
+          <a href="cybersecurity.html">Cybersecurity</a>
+          <ul class="dropdown">
+            <li><a href="#cyber-basics">Basics</a></li>
+            <li><a href="#cyber-threats">Threats</a></li>
+            <li><a href="#cyber-defense">Defense</a></li>
+          </ul>
+        </li>
+        <li><a href="arvr.html">AR/VR</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="image1.jpg" alt="Slide 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="image2.jpg" alt="Slide 2">
+      </div>
+      <div class="carousel-slide">
+        <img src="image3.jpg" alt="Slide 3">
+      </div>
+      <!-- Add more slides as needed -->
+    </div>
+
+
+    <!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeSignupModal()">&times;</span>
+    <h2>Sign Up</h2>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+    <!-- Add navigation arrows -->
+    <div class="carousel-arrows">
+      <img src="larrow.png" alt="Left Arrow" class="carousel-prev">
+      <img src="rarrow.png" alt="Right Arrow" class="carousel-next">
+    </div>
+
+
+    <section class="technology-buttons">
+      <div class="technology-button ai-button" onclick="openPage('ai.html')" onmouseover="onHover('ai')" onmouseout="onMouseOut()">
+        <h2>AI</h2>
+      </div>
+      <div class="technology-button ml-button" onclick="openPage('ml.html')" onmouseover="onHover('ml')" onmouseout="onMouseOut()">
+        <h2>ML</h2>
+      </div>
+      <div class="technology-button vr-button" onclick="openPage('arvr.html')" onmouseover="onHover('arvr')" onmouseout="onMouseOut()">
+        <h2>VR</h2>
+      </div>
+    </section>
+
+    <section id="home" class="section">
+      <h1>Welcome to the World of New Technologies</h1>
+    </section>
+
+    <section id="ai" class="section">
+      <h2>Artificial Intelligence (AI)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, eget feugiat mi
+        semper.</p>
+    </section>
+
+    <section id="ml" class="section">
+      <h2>Machine Learning (ML)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, eget feugiat mi
+        semper.</p>
+    </section>
+
+    <section id="iot" class="section">
+      <h2>Internet of Things (IoT)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, eget feugiat mi
+        semper.</p>
+    </section>
+
+    <section id="cybersecurity" class="section">
+      <h2>Cybersecurity</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, eget feugiat mi
+        semper.</p>
+    </section>
+
+    <section id="arvr" class="section">
+      <h2>Augmented Reality (AR) / Virtual Reality (VR)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, eget feugiat mi
+        semper.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 New Technologies Website</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

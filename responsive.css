@@ -1,0 +1,38 @@
+/* Add your media queries here for mobile responsiveness */
+    @media screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      nav ul li .dropdown {
+        position: static;
+        display: none;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+      }
+
+      nav ul li:hover .dropdown {
+        display: block;
+      }
+
+      .carousel-slide {
+        position: relative;
+      }
+
+      .technology-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .technology-button {
+        margin: 10px;
+      }
+    }
