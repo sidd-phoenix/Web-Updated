@@ -1,4 +1,3 @@
-// JavaScript for Carousel
 const slides = document.querySelectorAll('.carousel-slide');
 let currentSlide = 0;
 
@@ -47,29 +46,25 @@ function search() {
   const searchTerm = document.querySelector('.search-bar input').value.trim().toLowerCase();
   if (searchTerm !== '') {
     // Allow only specific technology terms for searching
-    const allowedTerms = [
-      'ai',
-      'artificial intelligence',
-      'ml',
-      'machine learning',
-      'iot',
-      'internet of things',
-      'cybersecurity',
-      'ar',
-      'augmented reality',
-      'vr',
-      'virtual reality',
-    ];
+    const allowedTerms = {
+      'ai': 'ai.html',
+      'artificial intelligence': 'ai.html',
+      'ml': 'ml.html',
+      'machine learning': 'ml.html',
+      'iot': 'iot.html',
+      'internet of things': 'iot.html',
+      'cybersecurity': 'cybersecurity.html',
+      'ar': 'arvr.html',
+      'augmented reality': 'arvr.html',
+      'vr': 'arvr.html',
+      'virtual reality': 'arvr.html',
+    };
 
-    if (allowedTerms.includes(searchTerm)) {
+    if (allowedTerms.hasOwnProperty(searchTerm)) {
       // Show the loading overlay for 2 seconds before redirecting to the page
       showLoadingOverlay();
       setTimeout(() => {
-        if (searchTerm === 'ar' || searchTerm === 'vr') {
-          window.location.href = 'arvr.html';
-        } else {
-          window.location.href = `${searchTerm}.html`;
-        }
+        window.location.href = allowedTerms[searchTerm];
       }, 2000); // Redirect after 2 seconds
     } else {
       // Display a message indicating that the entered term is not allowed
@@ -81,9 +76,6 @@ function search() {
   }
 }
 
-const searchButton = document.getElementById('search-button');
-searchButton.addEventListener('click', search);
-
 // Show loading overlay
 function showLoadingOverlay() {
   const loadingOverlay = document.getElementById('loading-overlay');
@@ -94,11 +86,40 @@ function showLoadingOverlay() {
 }
 // Navigation Links Functionality
 function navigateTo(technology) {
-    showLoadingOverlay();
-    setTimeout(() => {
-      window.location.href = `${technology}.html`;
-    }, 2000);
-  }
+  showLoadingOverlay();
+  setTimeout(() => {
+    window.location.href = `${technology}.html`;
+  }, 2000);
+}
+
+
+
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', search);
+
+function openPage(url) {
+  window.location.href = url;
+}
+
+function onHover(technology) {
+  const technologyButtons = document.querySelectorAll('.technology-button');
+
+  technologyButtons.forEach((button) => {
+    if (button.classList.contains(technology)) {
+      button.classList.remove('blur-effect');
+    } else {
+      button.classList.add('blur-effect');
+    }
+  });
+}
+
+function onMouseOut() {
+  const technologyButtons = document.querySelectorAll('.technology-button');
+
+  technologyButtons.forEach((button) => {
+    button.classList.remove('blur-effect');
+  });
+}
 
 // JavaScript for Login Modal
 const loginModal = document.getElementById('loginModal');
@@ -112,7 +133,7 @@ function closeModal() {
 }
 
 // Close modal when user clicks outside the modal content
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target === loginModal) {
     loginModal.style.display = 'none';
   }

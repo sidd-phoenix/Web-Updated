@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity - New Technologies Website</title>
     <link rel="stylesheet" href="./index_style.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ai.html">AI</a></li>
-                <li><a href="ml.html">ML</a></li>
-                <li><a href="iot.html">IoT</a></li>
-                <li><a href="cybersecurity.html">Cybersecurity</a></li>
-                <li><a href="arvr.html">AR/VR</a></li>
+                <li><a href="#" onclick="navigateTo('index')">Home</a></li>
+                <li><a href="#" onclick="navigateTo('ai')">AI</a></li>
+                <li><a href="#" onclick="navigateTo('ml')">ML</a></li>
+                <li><a href="#" onclick="navigateTo('iot')">IoT</a></li>
+                <li><a href="#" onclick="navigateTo('cybersecurity')">Cybersecurity</a></li>
+                <li><a href="#" onclick="navigateTo('arvr')">AR/VR</a></li>
             </ul>
         </nav>
     </header>
@@ -26,8 +28,8 @@
                 <div class="content-left">
                     <h2>Cybersecurity</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, 
-                        eget feugiat mi semper. Sed sit amet volutpat nulla. Sed at sem quam. Quisque iaculis augue id 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit,
+                        eget feugiat mi semper. Sed sit amet volutpat nulla. Sed at sem quam. Quisque iaculis augue id
                         velit dictum, ut eleifend eros viverra. Nullam dapibus sapien in commodo dictum.
                     </p>
                 </div>
@@ -40,8 +42,8 @@
                 <div class="content-right">
                     <h2>Cybersecurity</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit, 
-                        eget feugiat mi semper. Sed sit amet volutpat nulla. Sed at sem quam. Quisque iaculis augue id 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor metus nec nunc blandit,
+                        eget feugiat mi semper. Sed sit amet volutpat nulla. Sed at sem quam. Quisque iaculis augue id
                         velit dictum, ut eleifend eros viverra. Nullam dapibus sapien in commodo dictum.
                     </p>
                 </div>
@@ -49,12 +51,33 @@
                     <img src="cybersecurity.jpg" alt="Cybersecurity Image">
                 </div>
             </div>
-            
+            <div id="loading-overlay" class="overlay">
+                <div class="loader"></div>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2023 New Technologies Website</p>
     </footer>
+    <script>
+        // Show loading overlay
+        function showLoadingOverlay() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'block';
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 2000); // Hide loading overlay after 2 seconds
+        }
+        // Navigation Links Functionality
+        function navigateTo(technology) {
+            showLoadingOverlay();
+            setTimeout(() => {
+                window.location.href = `${technology}.html`;
+            }, 2000);
+        }
+    </script>
 </body>
+
 </html>
