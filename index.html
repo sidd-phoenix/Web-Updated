@@ -28,33 +28,33 @@
     
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="#" onclick="navigateTo('index')">Home</a></li>
         <li>
-          <a href="ai.html">AI</a>
+          <a href="#" onclick="navigateTo('ai')">AI</a>
           <ul class="dropdown">
-            <li><a href="#ai-intro">Introduction</a></li>
-            <li><a href="#ai-applications">Applications</a></li>
-            <li><a href="#ai-ethics">Ethical Considerations</a></li>
+            <li><a href="#" onclick="navigateTo('ai')">Introduction</a></li>
+            <li><a href="#" onclick="navigateTo('ai')">Applications</a></li>
+            <li><a href="#" onclick="navigateTo('ai')">Ethical Considerations</a></li>
           </ul>
         </li>
         <li>
-          <a href="ml.html">ML</a>
+          <a href="#" onclick="navigateTo('ml')">ML</a>
           <ul class="dropdown">
-            <li><a href="#ml-algorithms">Algorithms</a></li>
-            <li><a href="#ml-models">Models</a></li>
-            <li><a href="#ml-applications">Applications</a></li>
+            <li><a href="#" onclick="navigateTo('ml')">Algorithms</a></li>
+            <li><a href="#" onclick="navigateTo('ml')">Models</a></li>
+            <li><a href="#" onclick="navigateTo('ml')">Applications</a></li>
           </ul>
         </li>
-        <li><a href="iot.html">IoT</a></li>
+        <li><a href="iot.html" onclick="navigateTo('iot')">IoT</a></li>
         <li>
-          <a href="cybersecurity.html">Cybersecurity</a>
+          <a href="#" onclick="navigateTo('cybersecurity')">Cybersecurity</a>
           <ul class="dropdown">
-            <li><a href="#cyber-basics">Basics</a></li>
-            <li><a href="#cyber-threats">Threats</a></li>
-            <li><a href="#cyber-defense">Defense</a></li>
+            <li><a href="#" onclick="navigateTo('cybersecurity')">Basics</a></li>
+            <li><a href="#" onclick="navigateTo('cybersecurity')">Threats</a></li>
+            <li><a href="#" onclick="navigateTo('cybersecurity')">Defense</a></li>
           </ul>
         </li>
-        <li><a href="arvr.html">AR/VR</a></li>
+        <li><a href="#" onclick="navigateTo('arvr')">AR/VR</a></li>
       </ul>
     </nav>
   </header>
@@ -105,6 +105,10 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
+</div>
+
+<div id="loading-overlay" class="overlay">
+  <div class="loader"></div>
 </div>
 
     <!-- Add navigation arrows -->

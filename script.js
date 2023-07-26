@@ -1,3 +1,4 @@
+// JavaScript for Carousel
 const slides = document.querySelectorAll('.carousel-slide');
 let currentSlide = 0;
 
@@ -61,14 +62,15 @@ function search() {
     ];
 
     if (allowedTerms.includes(searchTerm)) {
-      // Special case for "ar" or "vr" search term to redirect to "arvr.html"
-      if (searchTerm === 'ar' || searchTerm === 'vr') {
-        window.location.href = 'arvr.html';
-      } else {
-        // Navigate to the searched page (assuming page URLs follow the format: [technology-term].html)
-        const url = `${searchTerm}.html`;
-        window.location.href = url;
-      }
+      // Show the loading overlay for 2 seconds before redirecting to the page
+      showLoadingOverlay();
+      setTimeout(() => {
+        if (searchTerm === 'ar' || searchTerm === 'vr') {
+          window.location.href = 'arvr.html';
+        } else {
+          window.location.href = `${searchTerm}.html`;
+        }
+      }, 2000); // Redirect after 2 seconds
     } else {
       // Display a message indicating that the entered term is not allowed
       console.log('Invalid search term. Please enter a valid technology term.');
@@ -82,29 +84,21 @@ function search() {
 const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', search);
 
-function openPage(url) {
-  window.location.href = url;
+// Show loading overlay
+function showLoadingOverlay() {
+  const loadingOverlay = document.getElementById('loading-overlay');
+  loadingOverlay.style.display = 'block';
+  setTimeout(() => {
+    loadingOverlay.style.display = 'none';
+  }, 2000); // Hide loading overlay after 2 seconds
 }
-
-function onHover(technology) {
-  const technologyButtons = document.querySelectorAll('.technology-button');
-
-  technologyButtons.forEach((button) => {
-    if (button.classList.contains(technology)) {
-      button.classList.remove('blur-effect');
-    } else {
-      button.classList.add('blur-effect');
-    }
-  });
-}
-
-function onMouseOut() {
-  const technologyButtons = document.querySelectorAll('.technology-button');
-
-  technologyButtons.forEach((button) => {
-    button.classList.remove('blur-effect');
-  });
-}
+// Navigation Links Functionality
+function navigateTo(technology) {
+    showLoadingOverlay();
+    setTimeout(() => {
+      window.location.href = `${technology}.html`;
+    }, 2000);
+  }
 
 // JavaScript for Login Modal
 const loginModal = document.getElementById('loginModal');
