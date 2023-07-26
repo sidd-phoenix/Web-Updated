@@ -1,0 +1,25 @@
+/* Add the styles for the dark theme here */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.theme-toggle i {
+  color: #ffffff;
+  font-size: 24px;
+}

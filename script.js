@@ -148,3 +148,16 @@ function openSignupModal() {
 function closeSignupModal() {
   signupModal.style.display = 'none';
 }
+
+
+function toggleDarkMode() {
+  const body = document.body;
+  const isDarkMode = body.classList.contains('dark-theme');
+
+  if (isDarkMode) {
+    // Switch to light theme
+    body.classList.remove('dark-theme');
+  } else {
+    // Switch to dark theme
+    body.classList.add('dark-theme');
+  }}
